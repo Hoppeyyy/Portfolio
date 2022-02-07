@@ -6,6 +6,7 @@ import MobMenu from '../MobMenu';
 import {useRouter} from 'next/router'
 import { Spin as Hamburger } from 'hamburger-react'
 
+
 const Cont = styled.div`
 @media only screen and (max-width: 600px){
   width:100%;
@@ -20,6 +21,7 @@ const Web = styled.div`
   display:none;
   }
   @media only screen and (min-width: 600px){
+    height:52px;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -40,22 +42,18 @@ const Mob = styled.div`
 const Logo = styled.img`
 display:${props=>props.display};
 `
-const NavIcon = styled.img`
 
-
-`
 const LinkBox = styled.div`
 display:flex;
 flex-direction:row;
 `
 const Link = styled.span`
 color:#999CA0;
-font-size: 32px;
+font-size: 24px;
 font-family: 'Raleway', sans-serif;
-font-style: normal;
-font-weight: normal;
+font-weight:200;
 padding:1rem;
-margin-right:3rem;
+margin-right:1.3rem;
 :hover{
   color:#FFFFFF;
 }
@@ -82,8 +80,7 @@ const MobLink = styled.span`
 color:#999CA0;
 font-size: 32px;
 font-family: 'Raleway', sans-serif;
-font-style: normal;
-font-weight: normal;
+font-weight:200;
 padding:1rem;
 margin-top:20px;
 :hover{
@@ -105,7 +102,6 @@ const Nav = ({
     const router = useRouter();
     //const [open, setOpen] = useState(false);
     const [isOpen, setOpen] = useState(false);
-
     const LinkedIn = './LinkedIn.svg'
     const LinkedIn_hover = './LinkedIn_hover.svg'
     const Insta = './Insta.svg'
@@ -113,7 +109,7 @@ const Nav = ({
     const Behance = './Behance.svg'
     const Behance_hover = './Behance_hover.svg'
     const Github = './Github.svg'
-    const Github_hover = './Github_hover.svg'
+    const Github_hover = './Github_hover.png'
 
     const ImageToggleOnMouseOver = ({primaryImg, secondaryImg}) => {
       const imageRef = useRef(null);
@@ -128,6 +124,8 @@ const Nav = ({
           src={primaryImg} 
           alt=""
           ref={imageRef}
+          width="50px"
+          height="50px"
         />
       )
     }
@@ -135,29 +133,29 @@ const Nav = ({
     const ImageChangeOnMouseOver = () => {
       return (
         <div>
-          <ImageToggleOnMouseOver
+          <a href="https://www.linkedin.com/in/chisaki-nakamura-951b55229/" target="_blank"><ImageToggleOnMouseOver
             primaryImg={LinkedIn}
             secondaryImg={LinkedIn_hover}
-            alt="" />
+            alt="LinkedIn" /></a>
           &nbsp; &nbsp; &nbsp;
-          <ImageToggleOnMouseOver
+          <a href="https://www.instagram.com/hoppeyyy/?hl=ja" target="_blank"><ImageToggleOnMouseOver
             primaryImg={Insta}
             secondaryImg={Insta_hover}
-            alt="" />
+            alt="Instagram" /></a>
           &nbsp; &nbsp; &nbsp;
-          <ImageToggleOnMouseOver
+          <a href="https://www.behance.net/hoppeyyye6a4" target="_blank"><ImageToggleOnMouseOver
             primaryImg={Behance}
             secondaryImg={Behance_hover}
-            alt="" />
+            alt="Behance" /></a>
           &nbsp; &nbsp; &nbsp;
-          <ImageToggleOnMouseOver
+          <a href="https://github.com/Hoppeyyy" target="_blank"><ImageToggleOnMouseOver
             primaryImg={Github}
             secondaryImg={Github_hover}
-            alt="" />
+            alt="Github" /></a>
         </div>
       )
     }
-
+  
     var height = 0, width = 0, display = "none";
     if(isOpen){
       height="100vh";
@@ -168,21 +166,21 @@ const Nav = ({
     }
      return<Cont>
        <Web>
-       <Logo src="./logo.svg"/>
+       <Logo src="./logo.svg" onClick={()=>router.push("/")}/>
        <LinkBox>
-        <Link href="#">About</Link>
-        <Link href="#">Work</Link>
-        <Link href="#">Contact</Link>
+        <Link onClick={()=>router.push("/About")}>About</Link>
+        <Link onClick={()=>router.push("/Work")}>Work</Link>
+        <Link onClick={()=>router.push("/Contact")}>Contact</Link>
        </LinkBox>
        </Web>
         <Mob>
         <Hamburger toggled={isOpen} toggle={setOpen} color="#E5E5E5"  />
         <MenuCont height={height} width={width} display={display}>
-        <MobLogo src="./logo.svg"/>
+        <MobLogo src="./logo.svg"  onClick={()=>router.push("/")}/>
         <MobLinkBox>
-        <MobLink href="#">About</MobLink>
-        <MobLink href="#">Work</MobLink>
-        <MobLink href="#">Contact</MobLink>
+        <MobLink onClick={()=>router.push("/About")}>About</MobLink>
+        <MobLink onClick={()=>router.push("/Work")}>Work</MobLink>
+        <MobLink onClick={()=>router.push("/Contact")}>Contact</MobLink>
        </MobLinkBox>
        <IconBox>
           <ImageChangeOnMouseOver/>
