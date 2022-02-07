@@ -2,7 +2,6 @@ import react, {useState} from 'react';
 import styled from 'styled-components';
 import Nav from '../comp/Nav'
 import {device} from '../comp/device'
-import MobMenu from '../comp/MobMenu';
 
 const Cont = styled.div`
 width:100%;

@@ -2,7 +2,6 @@ import react, {useState,Component,useRef} from 'react';
 import * as React from 'react';
 import styled from 'styled-components';
 import {device} from '../device'
-import MobMenu from '../MobMenu';
 import {useRouter} from 'next/router'
 import { Spin as Hamburger } from 'hamburger-react'
 
