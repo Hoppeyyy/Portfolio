@@ -12,8 +12,9 @@ const Cont = styled.div`
   padding:0.5rem;
   background-color:#212121;
   }
-  width:100%;
-  padding:2rem;
+  padding:1rem;
+  width:100vw;
+  height:10vh;
 `
 const Web = styled.div`
 @media only screen and (max-width: 600px){
@@ -40,18 +41,22 @@ const Mob = styled.div`
 `
 const Logo = styled.img`
 display:${props=>props.display};
+width:30px;
+height:30px;
+margin-top:-2px;
 `
 
 const LinkBox = styled.div`
 display:flex;
 flex-direction:row;
+margin-top:-5px;
 `
 const Link = styled.span`
 color:#999CA0;
-font-size: 24px;
+font-size: 18px;
 font-family: 'Raleway', sans-serif;
 font-weight:200;
-padding:1rem;
+padding:0.5rem;
 margin-right:1.3rem;
 :hover{
   color:#FFFFFF;
@@ -66,7 +71,7 @@ background-color:#212121;
 margin-top:4rem;
 `
 const MobLogo = styled.img`
-height:51px;
+height:50px;
 
 `
 const MobLinkBox = styled.div`
@@ -77,11 +82,11 @@ align-items:center;
 `
 const MobLink = styled.span`
 color:#999CA0;
-font-size: 32px;
+font-size: 25px;
 font-family: 'Raleway', sans-serif;
 font-weight:200;
-padding:1rem;
-margin-top:20px;
+padding:0.4rem;
+margin-top:40px;
 :hover{
   color:#FFFFFF;
 }
@@ -89,11 +94,9 @@ margin-top:20px;
 const IconBox = styled.div`
 display:flex;
 justify-content:center;
-margin-top:4rem;
+margin-top:6rem;
 `
-const Icon = styled.img`
-:hover{}
-`
+
 const Nav = ({
   
   
@@ -173,7 +176,7 @@ const Nav = ({
        </LinkBox>
        </Web>
         <Mob>
-        <Hamburger toggled={isOpen} toggle={setOpen} color="#E5E5E5"  />
+        <Hamburger toggled={isOpen} toggle={setOpen} color="#E5E5E5" size={25} />
         <MenuCont height={height} width={width} display={display}>
         <MobLogo src="./logo.svg"  onClick={()=>router.push("/")}/>
         <MobLinkBox>

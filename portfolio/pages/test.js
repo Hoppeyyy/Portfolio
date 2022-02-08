@@ -2,11 +2,17 @@ import react, {useState} from 'react';
 import styled from 'styled-components';
 import Nav from '../comp/Nav'
 import {device} from '../comp/device'
+import Footer from '../comp/Footer'
 
 const Cont = styled.div`
-width:100%;
-height:100%;
+width:100vw;
+height:100vh;
 background-color:#212121;
+`
+const Main = styled.div`
+width:100%;
+height:80%;
+
 `
 export default function Test() {
   const [showMe, setShowMe] = useState(false);
@@ -16,6 +22,10 @@ export default function Test() {
   return (
     <Cont>
       <Nav onMenuClick={toggle}/>
+      <Main>
+
+      </Main>
+      <Footer/>
     </Cont>
   )
 }
