@@ -12,8 +12,10 @@ const Cont = styled.section`
   background-color:#212121;
   }
   padding:1rem;
+  padding-top:2rem;
   width:100vw;
   height:10vh;
+  
 `
 const Web = styled.div`
 @media only screen and (max-width: 600px){
@@ -29,7 +31,6 @@ const Web = styled.div`
 const Mob = styled.div`
 @media only screen and (max-width: 600px){
   width:100%;
-  height:${props=>props.height};
   display:flex;
   flex-direction:column;
   align-items:flex-end;
@@ -43,6 +44,7 @@ display:${props=>props.display};
 width:30px;
 height:30px;
 margin-top:-2px;
+margin-left:1rem;
 `
 
 const LinkBox = styled.div`
@@ -63,11 +65,14 @@ margin-right:1.3rem;
 `
 const MenuCont = styled.div`
 width:${props=>props.width};
-height:${props=>props.height};
+min-height:${props=>props.height};
 display:${props=>props.display};
 flex-direction:column;
 background-color:#212121;
-margin-top:4rem;
+z-index:1;
+overflow:hidden;
+padding-top:5rem;
+
 `
 const MobLogo = styled.img`
 height:50px;
@@ -95,6 +100,7 @@ display:flex;
 justify-content:center;
 margin-top:6rem;
 `
+
 
 const Nav = ({
   

@@ -9,12 +9,13 @@ const Cont = styled.section`
 @media only screen and (min-width 600px){
   display:flex;
   height:10vh;
-  
+ 
 }
 `
 
 const IconBox = styled.div`
-padding-left:1.3rem;
+padding-left:2rem;
+
 `
 const Footer = ({
 
