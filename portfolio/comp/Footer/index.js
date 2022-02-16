@@ -1,8 +1,8 @@
-import react, {useState,Component,useRef} from 'react';
+import react, {useRef} from 'react';
 import * as React from 'react';
 import styled from 'styled-components';
 
-const Cont = styled.div`
+const Cont = styled.section`
 @media only screen and (max-width: 600px){
   display:none;
   }

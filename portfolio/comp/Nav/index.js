@@ -1,12 +1,11 @@
-import react, {useState,Component,useRef} from 'react';
+import react, {useState,useRef} from 'react';
 import * as React from 'react';
 import styled from 'styled-components';
-import {device} from '../device'
 import {useRouter} from 'next/router'
 import { Spin as Hamburger } from 'hamburger-react'
 
 
-const Cont = styled.div`
+const Cont = styled.section`
 @media only screen and (max-width: 600px){
   width:100%;
   padding:0.5rem;
