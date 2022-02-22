@@ -1,9 +1,16 @@
-import react, {useState} from 'react';
+import react, {useState,useContext,useCallback} from 'react';
 import styled from 'styled-components';
 import Nav from '../comp/Nav'
 import {device} from '../comp/device'
 import Footer from '../comp/Footer'
 import HomeTitle from '../comp/HomeTitle'
+import Content from '../comp/Content'
+import Mouse from '../comp/Mouse'
+import useCursorHandlers from "../hooks/useCursorHandlers";
+import Work from '../comp/Work'
+
+
+
 
 const MainBox = styled.div`
 width:100%;
@@ -55,6 +62,38 @@ display:flex;
 flex:1;
 justify-content:center;
 align-items:center;
+
+`
+const WLeft = styled.div`
+display:flex;
+flex:1;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:1.5rem;
+position: relative;
+animation: mycard 4.5s 5;
+animation-delay:0s;
+@keyframes mycard {
+  0%{
+    top:-300;
+    opacity:0;
+  }
+  50%{
+    top:-300;
+    opacity:0;
+  }
+  100% {
+    top:0;
+    opacity:1;
+  }
+}
+`
+const Middle = styled.div`
+display:flex;
+flex:1;
+justify-content:center;
+align-items:center;
 `
 const Right = styled.div`
 display:flex;
@@ -67,7 +106,28 @@ position:absolute; right:0;left:0;
 height:70px; bottom:0;
 
 `
-
+const Img = styled.img`
+width:400px;
+height:400px;
+@media only screen and (max-width: 600px){
+width:250px;
+height:250px;
+}
+`
+const ImgAnim = styled.img`
+width:400px;
+height:400px;
+position: relative;
+animation: mymove 5s 5;
+@keyframes mymove {
+  from {left: -500px;}
+  to {left: 0px;}
+}
+@media only screen and (max-width: 600px){
+width:250px;
+height:250px;
+}
+`
 /* 
 or overflow-x:hidden 
 
@@ -86,20 +146,21 @@ export default function Home() {
   function toggle(){
     setShowMe(!showMe);
   }
+  const cursorHandlers = useCursorHandlers();
 
-
-
+ 
 
   return (
       <MainBox>
         {/* ================= Home ====================== */}
-        <Section>
+        <Section id="home">
+          <Mouse/>
           <HeaderBox>
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
           <Wrap>
-          <Left>
-            <HomeTitle/>
+          <Left {...cursorHandlers}>
+          <HomeTitle/>
           </Left>
           <Right>
            
@@ -110,16 +171,23 @@ export default function Home() {
           </FooterBox>
         </Section>
         {/* ================= About ====================== */}
-        <Section>
+        <Section id="about">
           <HeaderBox>
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
           <Wrap>
-          <Left>
-
+          <Left {...cursorHandlers}>
+          <Content
+          color="#3448F0"
+          timer={cursorHandlers ?'running':'paused'}
+          title="Hello World"
+          text={"Hello and Welcome, Folks"}
+          text2={"I am Chisaki Nakamura who has passion in designing and developing websites and currently is studying at Digital Design and Development Program at BCIT."}
+          text3={"I specialized designing beautiful and functional UI/ UX designs for both web and mobile applications / websites and developing them professionally with the skills of collabolations and communications in a team."}
+          />
           </Left>
-          <Right>
-            <HomeTitle/>
+          <Right >
+          <Img src="./AboutMe_Robot.svg"/>
           </Right>
           </Wrap>
           <FooterBox>
@@ -132,11 +200,28 @@ export default function Home() {
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
           <Wrap>
-          <Left>
-
+          <Left {...cursorHandlers}>
+          <Content
+          title="Design"
+          timer={cursorHandlers ?'running':'paused'}
+          color="#FF4E64"
+          text={"Coming up with new innovative ideas and visualizing them are my favorite parts of my job."}
+          text2={"To ensure that the final product will help people and be easy to use, I listen carefully to the needs and demands of users during the design process."}
+          text3=""
+          />
           </Left>
-          <Right>
-            <HomeTitle/>
+          <Middle>
+            <Img src="./AboutMe.svg"/>
+          </Middle>
+          <Right {...cursorHandlers}>
+          <Content
+          title="Develop"
+          timer={cursorHandlers ?'running':'paused'}
+          color="#FF4E64"
+          text={"In my free time, I enjoy reading coding documentations and watching programming crush courses on Youtube."}
+          text2={"Languages are my favorite subject, and programming languages let me visualize the languages, which is pretty cool !"}
+          text3=""
+          />
           </Right>
           </Wrap>
           <FooterBox>
@@ -144,16 +229,27 @@ export default function Home() {
           </FooterBox>
         </Section>
           {/* ================= Work ====================== */}
-          <Section>
+          <Section id="work">
           <HeaderBox>
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
           <Wrap>
-          <Left>
-
-          </Left>
+          <WLeft {...cursorHandlers}>
+            <Work 
+            src="./roomaView.svg"
+            title="Rooma"
+            about="web application"
+            year="2021"
+            />
+            <Work
+            src="./retheraphyView.svg"
+            title="Retheraphy"
+            about="mobile application"
+            year="2020"
+            />
+          </WLeft>
           <Right>
-            <HomeTitle/>
+            <ImgAnim src="./work.svg"/>
           </Right>
           </Wrap>
           <FooterBox>
@@ -161,7 +257,7 @@ export default function Home() {
           </FooterBox>
         </Section>
            {/* ================= Contact ====================== */}
-           <Section>
+           <Section id="contact">
           <HeaderBox>
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
@@ -170,12 +266,9 @@ export default function Home() {
 
           </Left>
           <Right>
-            <HomeTitle/>
+          
           </Right>
           </Wrap>
-          <FooterBox>
-            <Footer/>
-          </FooterBox>
         </Section>
       </MainBox>
    

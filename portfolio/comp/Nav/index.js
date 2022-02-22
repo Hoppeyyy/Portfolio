@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import {useRouter} from 'next/router'
 import { Spin as Hamburger } from 'hamburger-react'
-
+import Link from 'next/link'
 
 const Cont = styled.section`
 @media only screen and (max-width: 600px){
@@ -52,7 +52,7 @@ display:flex;
 flex-direction:row;
 margin-top:-5px;
 `
-const Link = styled.span`
+const LinkSpan = styled.span`
 color:#999CA0;
 font-size: 18px;
 font-family: 'Raleway', sans-serif;
@@ -173,21 +173,21 @@ const Nav = ({
     }
      return<Cont>
        <Web>
-       <Logo src="./logo.svg" onClick={()=>router.push("/")}/>
+       <Link href="/#home" scroll={false}><Logo src="./logo.svg"/></Link>
        <LinkBox>
-        <Link onClick={()=>router.push("/About")}>About</Link>
-        <Link onClick={()=>router.push("/Work")}>Work</Link>
-        <Link onClick={()=>router.push("/Contact")}>Contact</Link>
+        <Link href="/#about" scroll={false}><LinkSpan>About</LinkSpan></Link>
+        <Link href="/#work" scroll={false}><LinkSpan>Work</LinkSpan></Link>
+        <Link href="/#contact" scroll={false}><LinkSpan>Contact</LinkSpan></Link>
        </LinkBox>
        </Web>
         <Mob>
         <Hamburger toggled={isOpen} toggle={setOpen} color="#E5E5E5" size={25} />
         <MenuCont height={height} width={width} display={display}>
-        <MobLogo src="./logo.svg"  onClick={()=>router.push("/")}/>
+        <Link href="/#home" scroll={false}><MobLogo src="./logo.svg"/></Link>
         <MobLinkBox>
-        <MobLink onClick={()=>router.push("/About")}>About</MobLink>
-        <MobLink onClick={()=>router.push("/Work")}>Work</MobLink>
-        <MobLink onClick={()=>router.push("/Contact")}>Contact</MobLink>
+        <Link href="/#about" scroll={false}><MobLink>About</MobLink></Link>
+        <Link href="/#work" scroll={false}><MobLink>Work</MobLink></Link>
+        <Link href="/#contact" scroll={false}><MobLink>Contact</MobLink></Link>
        </MobLinkBox>
        <IconBox>
           <ImageChangeOnMouseOver/>
