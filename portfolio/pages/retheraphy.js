@@ -133,7 +133,7 @@ export default function Retheraphy(){
           </Left>
           <Right>
            <Img src="./retheraphy.svg"/>
-           <Button><a href="https://final-project-retheraphy.vercel.app/" target="_blank">Visit Retheraphy</a></Button>
+           <Button><a href="https://final-project-retheraphy.vercel.app/" target="_blank" rel="noreferrer">Visit Retheraphy</a></Button>
           </Right>
           </Wrap>
           <FooterBox>

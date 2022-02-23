@@ -130,7 +130,7 @@ export default function Rooma(){
           </Left>
           <Right>
            <Img src="./rooma.svg"/>
-           <Button><a href="https://rooma.ca/login" target="_blank">Visit Rooma</a></Button>
+           <Button><a href="https://rooma.ca/login" target="_blank" rel="noreferrer">Visit Rooma</a></Button>
           </Right>
           </Wrap>
           <FooterBox>
