@@ -288,7 +288,7 @@ export default function Home() {
             onClick={()=>router.push("/rooma")}
             />
             <Work
-            src="./retheraphyView.svg"
+            src="./RetheraphyView.svg"
             title="Retheraphy"
             about="mobile application"
             year="2020"
