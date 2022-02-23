@@ -37,8 +37,7 @@ left:-75px;
 width:80px;
 height:80px;
 z-index: 999;
-pointer-events: none;
-transform:scale(${props=>props.scale});
+pointer-events: none; 
 will-change: transform;
 transition: transform .1s linear;
 transform: translate(-999px, -999px);
@@ -128,7 +127,6 @@ const Mouse = (
     
           cursorEl = document.querySelector('.cursor');
           cursorImageEl = document.querySelector('.myImg');
-          //cursorDot = document.querySelector('.myDot');
           updateCursor();
           
     }
@@ -151,8 +149,8 @@ const Mouse = (
   //style={{transform:`translate(${x}px,${y}px)`}}
   src="./roket_mouse.svg" 
   animation={cursorAnim}
-  scale={cursor.active ?'1.7':'1'}
   className="myImg"
+  style={{transform:`scale(${cursor.active ? 1.7:1})`}}
   /> 
   </Cursor>
   

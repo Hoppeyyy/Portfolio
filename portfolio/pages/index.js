@@ -8,7 +8,8 @@ import Content from '../comp/Content'
 import Mouse from '../comp/Mouse'
 import useCursorHandlers from "../hooks/useCursorHandlers";
 import Work from '../comp/Work'
-
+import {useRouter} from 'next/router'
+import Contact from '../comp/Contact'
 
 
 
@@ -73,8 +74,7 @@ justify-content:center;
 align-items:center;
 padding:1.5rem;
 position: relative;
-animation: mycard 4.5s 5;
-animation-delay:0s;
+animation: mycard 4.5s 1;
 @keyframes mycard {
   0%{
     top:-300;
@@ -89,6 +89,12 @@ animation-delay:0s;
     opacity:1;
   }
 }
+`
+const WRight = styled.div`
+display:flex;
+flex:1;
+justify-content:center;
+align-items:center;
 `
 const Middle = styled.div`
 display:flex;
@@ -136,15 +142,54 @@ const ImgAnim = styled.img`
 width:400px;
 height:400px;
 position: relative;
-animation: mymove 5s 5;
+z-index:1;
+animation: mymove 15s 1;
 @keyframes mymove {
-  from {left: -500px;}
-  to {left: 0px;}
+  0% {
+    left: -600px;
+  }
+  25% {
+    left: 0px;
+  }
+  50%{
+    transform:rotate(360deg);
+    transform:scale(1,1);
+    opacity:1;
+  }
+  100% {
+   transform:rotate(-360deg);
+    transform:scale(0,0);
+    opacity:0;
+  }
 }
 @media only screen and (max-width: 600px){
 width:250px;
 height:250px;
 }
+`
+const ImgCon = styled.img`
+margin-left:-200px;
+transform-origin: bottom right 30%;
+:hover{
+  animation: mycontact 2.5s 1;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 2);
+  @keyframes mycontact {
+    0% {
+      opacity:0;
+      transform: rotate(-180deg)
+     
+      ;}
+    100% {
+      opacity:1;
+      transform: rotate(0deg)
+    
+      ;}
+  }
+}
+@media only screen and (max-width: 600px){
+  width:250px;
+  height:250px;
+  }
 `
 /* 
 or overflow-x:hidden 
@@ -166,7 +211,7 @@ export default function Home() {
   }
   const cursorHandlers = useCursorHandlers();
 
-
+  const router = useRouter();
   return (
       <MainBox>
         {/* ================= Home ====================== */}
@@ -188,38 +233,28 @@ export default function Home() {
         </Section>
         {/* ================= About ====================== */}
         <Section id="about">
-          <HeaderBox>
-            <Nav onMenuClick={toggle}/>
-          </HeaderBox>
           <Wrap>
           <Left {...cursorHandlers}>
           <Content
           color="#3448F0"
-          timer={cursorHandlers ?'running':'paused'}
           title="Hello World"
           text={"Hello and Welcome, Folks"}
-          text2={"I am Chisaki Nakamura who has passion in designing and developing websites and currently is studying at Digital Design and Development Program at BCIT."}
-          text3={"I specialized designing beautiful and functional UI/ UX designs for both web and mobile applications / websites and developing them professionally with the skills of collabolations and communications in a team."}
+          text2={"I am Chisaki Nakamura with a passion for designing and developing websites and currently is studying in Digital Design and Development Program at BCIT."}
+          text3={"In addition to designing beautiful and functional UI/UX design for both web and mobile apps/websites, I also develop them professionally using multiple programming languages and have the ability to collaborate on a team."}
           />
           </Left>
           <Right >
           <ImgRobo src="./AboutMe_Robot.svg"/>
           </Right>
           </Wrap>
-          <FooterBox>
-            <Footer/>
-          </FooterBox>
+        
         </Section>
          {/* ================= About Me ====================== */}
          <Section>
-          <HeaderBox>
-            <Nav onMenuClick={toggle}/>
-          </HeaderBox>
           <Wrap>
           <Left {...cursorHandlers}>
           <Content
-          title="Design"
-          timer={cursorHandlers ?'running':'paused'}
+          title="Design"    
           color="#FF4E64"
           text={"Coming up with new innovative ideas and visualizing them are my favorite parts of my job."}
           text2={"To ensure that the final product will help people and be easy to use, I listen carefully to the needs and demands of users during the design process."}
@@ -232,23 +267,17 @@ export default function Home() {
           <Right {...cursorHandlers}>
           <Content
           title="Develop"
-          timer={cursorHandlers ?'running':'paused'}
           color="#FF4E64"
           text={"In my free time, I enjoy reading coding documentations and watching programming crush courses on Youtube."}
-          text2={"Languages are my favorite subject, and programming languages let me visualize the languages, which is pretty cool !"}
+          text2={"Languages are my favorite subject, and programming languages let me visualize the languages, which is pretty cool!"}
           text3=""
           />
           </Right>
           </Wrap>
-          <FooterBox>
-            <Footer/>
-          </FooterBox>
+         
         </Section>
           {/* ================= Work ====================== */}
           <Section id="work">
-          <HeaderBox>
-            <Nav onMenuClick={toggle}/>
-          </HeaderBox>
           <Wrap>
           <WLeft {...cursorHandlers}>
             <Work 
@@ -256,33 +285,30 @@ export default function Home() {
             title="Rooma"
             about="web application"
             year="2021"
+            onClick={()=>router.push("/rooma")}
             />
             <Work
             src="./retheraphyView.svg"
             title="Retheraphy"
             about="mobile application"
             year="2020"
+            onClick={()=>router.push("/retheraphy")}
             />
           </WLeft>
-          <Right>
+          <WRight>
             <ImgAnim src="./work.svg"/>
-          </Right>
+          </WRight>
           </Wrap>
-          <FooterBox>
-            <Footer/>
-          </FooterBox>
+         
         </Section>
            {/* ================= Contact ====================== */}
            <Section id="contact">
-          <HeaderBox>
-            <Nav onMenuClick={toggle}/>
-          </HeaderBox>
           <Wrap>
           <Left>
-
+            <ImgCon src="./contact.svg"/>
           </Left>
           <Right>
-          
+            <Contact/>
           </Right>
           </Wrap>
         </Section>

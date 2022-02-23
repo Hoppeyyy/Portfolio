@@ -6,15 +6,18 @@ width:550px;
 height:250px;
 display:flex;
 flex-direction:column;
+z-index:2;
 background-color:#EBEEF6;
 padding:1.5rem;
 margin:10px;
 border-radius: 20px;
+color: #212121;
 :hover{
   transform: scale(1.15);
   margin-bottom:20px;
   margin-top:20px;
   background-color:#7B8EFF;
+  color:#FFFFFF;
 }
 `
 
@@ -32,7 +35,6 @@ justify-content:space-between;
 const SubArea = styled.div`
 display:flex;
 flex-direction:row;
-
 `
 const Title = styled.h4`
 font-family: Raleway;
@@ -40,7 +42,6 @@ font-style: normal;
 font-weight: 500;
 font-size: 32px;
 line-height: 28px;
-color: #212121;
 margin:0;
 
 `
@@ -50,7 +51,6 @@ font-style: normal;
 font-weight: normal;
 font-size: 16px;
 line-height: 39px;
-color: #212121;
 margin:0;
 margin-left:10px;
 
@@ -59,9 +59,10 @@ const Work = ({
 src="",
 title="Rooma",
 about="web application",
-year="2021"
+year="2021",
+onClick=()=>{},
 })=>{
-  return<Cont>
+  return<Cont onClick={onClick}>
     <Img src={src}/>
     <TextArea>
       <Title>{title}</Title>
