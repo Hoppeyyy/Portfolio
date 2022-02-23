@@ -16,14 +16,18 @@ const useMousePosition = () => {
     });
   };
 
+// Because of a WebKit-Issue which renders (even SVG) cursors blurry on Retina-Displays I decided to go for a solution which renders the cursor within a custom <div>.
+
+
+
   useEffect(() => {
     document.addEventListener("mousemove", updatePosition, false);
     document.addEventListener("mouseenter", updatePosition, false);
-
     return () => {
       document.removeEventListener("mousemove", updatePosition);
       document.removeEventListener("mouseenter", updatePosition);
     };
+    
   }, []);
 
   return position;
