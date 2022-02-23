@@ -58,13 +58,11 @@ const Mouse = (
  
   //const { x, y } = useMousePosition();
   const [cursor] = useContext(MouseContext);
-  
-  /*const cursorAnim = keyframes`
-  0% {transform:translate(${x},${y}px);}
-  50% {transform:translate(${x},${y + 12}px);}
-  100% {transform:translate(${x},${y}px);}
-  `*/
-  
+  const cursorAnim = keyframes`
+  0%{top:10px;}
+  50%{top:0px;}
+  100%:{top:10px;}
+  `
   
     var rotatingCursor = function() {
 
@@ -152,7 +150,7 @@ const Mouse = (
   //style={{ left: `${x}px`, top: `${y}px` }}
   //style={{transform:`translate(${x}px,${y}px)`}}
   src="./roket_mouse.svg" 
-  //animation={cursorAnim}
+  animation={cursorAnim}
   scale={cursor.active ?'1.7':'1'}
   className="myImg"
   /> 
