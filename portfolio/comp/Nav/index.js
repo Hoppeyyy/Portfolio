@@ -116,7 +116,7 @@ const Nav = ({
     const Behance = './Behance.svg'
     const Behance_hover = './Behance_hover.svg'
     const Github = './Github.svg'
-    const Github_hover = './github_hover.png'
+    const Github_hover = './github_hover.svg'
 
     const ImageToggleOnMouseOver = ({primaryImg, secondaryImg}) => {
       const imageRef = useRef(null);
