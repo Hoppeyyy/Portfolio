@@ -138,6 +138,14 @@ height:250px;
   }
 }
 `
+const ImgProf = styled.img`
+width:400px;
+height:400px;
+@media only screen and (max-width: 600px){
+width:250px;
+height:250px;
+}
+`
 const ImgAnim = styled.img`
 width:400px;
 height:400px;
@@ -224,7 +232,7 @@ export default function Home() {
           <HomeTitle/>
           </Left>
           <Right>
-           
+          <ImgRobo src="./AboutMe_Robot.svg"/>
           </Right>
           </Wrap>
           <FooterBox>
@@ -244,7 +252,7 @@ export default function Home() {
           />
           </Left>
           <Right >
-          <ImgRobo src="./AboutMe_Robot.svg"/>
+          <ImgProf src="./MyProfile.jpg"/>
           </Right>
           </Wrap>
         

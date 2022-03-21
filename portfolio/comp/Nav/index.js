@@ -176,7 +176,7 @@ const Nav = ({
        <Link href="/#home" scroll={false}><Logo src="./logo.svg"/></Link>
        <LinkBox>
         <Link href="/#about" scroll={false}><LinkSpan>About</LinkSpan></Link>
-        <Link href="/#work" scroll={false}><LinkSpan>Work</LinkSpan></Link>
+        <Link href="/#work" scroll={false}><LinkSpan>Frontend</LinkSpan></Link>
         <Link href="/#contact" scroll={false}><LinkSpan>Contact</LinkSpan></Link>
        </LinkBox>
        </Web>
@@ -186,7 +186,7 @@ const Nav = ({
         <Link href="/#home" scroll={false}><MobLogo src="./logo.svg"/></Link>
         <MobLinkBox>
         <Link href="/#about" scroll={false}><MobLink>About</MobLink></Link>
-        <Link href="/#work" scroll={false}><MobLink>Work</MobLink></Link>
+        <Link href="/#work" scroll={false}><MobLink>Frontend</MobLink></Link>
         <Link href="/#contact" scroll={false}><MobLink>Contact</MobLink></Link>
        </MobLinkBox>
        <IconBox>
