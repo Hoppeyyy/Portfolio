@@ -252,7 +252,7 @@ export default function Home() {
           />
           </Left>
           <Right >
-          <ImgProf src="./MyProfile.jpg"/>
+          <ImgProf src="./MyProfile.JPG"/>
           </Right>
           </Wrap>
         
