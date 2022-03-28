@@ -39,6 +39,7 @@ height:80%;
 display:flex;
 @media only screen and (max-width: 600px){
 flex-direction:column;
+justify-content:center;
 align-items:center;
 }
 @media only screen and (min-width 600px){
@@ -59,9 +60,6 @@ align-items:left;
 flex-direction:column;
 padding-left:4rem;
 justify-content:center;
-@media only screen and (max-width: 600px){
-  padding-left:3rem;
-  }
 `
 
 const Right = styled.div`
@@ -113,9 +111,7 @@ const Position = styled.h2`
 margin:0;
 font-family: 'Playfair Display', serif;
 font-size:45px;
-@media only screen and (max-width: 600px){
-  font-size:30px;
-  }
+
 `
 const Intro = styled.p`
 margin:0;
@@ -127,54 +123,60 @@ font-size:16px;
 margin-top:1rem;
 line-height: 24px;
 `
-const Robot = styled.img`
-width:350px;
-height:350px;
-@media only screen and (max-width: 600px){
+const Profile = styled.img`
 width:250px;
 height:250px;
-  }
+border-radius:10px;
+-webkit-filter: grayscale(20%); /* Safari 6.0 - 9.0 */
+filter: grayscale(20%);
+:hover{
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+filter: grayscale(0%);
+}
 `
+
 const Top = styled.div`
+width:100%;
+height:350px;
 display:flex;
-flex-direction:column;
 align-items:center;
-margin-top:2rem;
+justify-content:center;
+text-align:center;
+margin-top:1rem;
+background-image: linear-gradient(
+  -225deg,
+  #02aab0  0%,
+  #00cdac 50%,
+  #02aab0  100%
+);
+z-index:1;
+
+`
+const AboutImg = styled.img`
+width:250px;
+height:250px;
+z-index:3;
+
 `
 const Bot = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
-margin-top:2rem;
 `
-const Title = styled.h1`
-margin:0;
-font-family: 'Playfair Display', serif;
-font-size:45px;
-background-image: linear-gradient(
-  -225deg,
-  #06beb6 0%,
-  #48b1bf 50%,
-  #06beb6 100%
-);
-background-size: auto auto;
-background-clip: border-box;
-background-size: 200% auto;
-color: #fff;
-background-clip: text;
-text-fill-color: transparent;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-animation: textclip2 6s linear infinite;
-display: inline-block;
-@keyframes textclip2 {
-  to {
-    background-position: 200% center;
-  }
-}
-@media only screen and (max-width: 600px){
-  font-size:30px;
-  }
+const Para1 = styled.div`
+display:flex;
+flex-direction:row;
+padding:1.5rem;
+`
+const Set = styled.div`
+display:flex;
+flex-direction:column;
+`
+const ToolBox = styled.div`
+width:200px;
+height:80px;
+display:flex;
+flex-wrap:wrap;
 `
 const Sub = styled.p`
 width:50%;
@@ -185,7 +187,7 @@ color: #aaa9ad;
 font-size:14px;
 margin-top:1rem;
 line-height: 20px;
-text-align:center;
+text-align:left;
 `
 const Main = styled.h3`
 width:50%;
@@ -194,7 +196,7 @@ font-family: 'Playfair Display', serif;
 font-size:20px;
 margin-top:1rem;
 line-height: 24px;
-text-align:center;
+text-align:left;
 background-image: linear-gradient(
   -200deg,
   #e2e2e3 0%,
@@ -216,8 +218,7 @@ text-fill-color: transparent;
 display: inline-block;
 
 `
-
-export default function Home() {
+export default function About() {
   const [showMe, setShowMe] = useState(false);
   function toggle(){
     setShowMe(!showMe);
@@ -227,49 +228,48 @@ export default function Home() {
   const router = useRouter();
   return (
       <MainBox>
-        {/* ================= Home ====================== */}
-        <Section id="home">
+          {/* ================= About ====================== */}
+       <Section>
+          <ColWrap>
+          <Top>
+          <AboutImg src="/AboutMe.svg"/>
+          </Top>
+          <Bot>
+          <Para1>
+          <Set>
+          <Main>What I do</Main>
+            <Sub>
+            I developed numerous UI/UX designs and frontend development projects during the past two years using various software and coding languages. 
+            </Sub>
+          </Set>
+          <Set>
+          <Main>Tools</Main>
+            <ToolBox>
+              
+            </ToolBox>
+          </Set>
+          </Para1>
+          </Bot>
+          </ColWrap>
+        </Section>
+        {/* ================= About ====================== */}
+        <Section id="about">
           <HeaderBox>
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
           <RowWrap>
           <Left>
-            <Name>
-              Hi there, I'm Chisaki 
-              <span role="img" aria-label="Waving Hand"> 👋</span>
-            </Name>
-            <TextAnim>
-            <Position>Frontend developer</Position>
-            <Position>UI/UX Designer</Position>
-            </TextAnim>
-            <Intro>I have specialized in both design and development for web and mobile with a solid understanding of UI / UX.</Intro>
+          <Profile src="/MyProfile.JPG"/>
           </Left>
           <Right>
-            <Robot src="/AboutMe_Robot.svg"/>
+           
           </Right>
           </RowWrap>
           <FooterBox>
             <Footer/>
           </FooterBox>
         </Section>
-          {/* ================= Intro ====================== */}
-          <Section>
-          <ColWrap>
-          <Top>
-            <Sub>Curious and Creative</Sub>
-            <Main>Chisaki Nakamura is a junior frontend developer based in Vancouver, BC.</Main>
-            <Sub>
-              I have been studying in the digital design and development program at BCIT since 2020
-              and am expected to graduate in June 2022. 
-              Also, Currently working as React Native Developer at Guessfit.
-            </Sub>
-          </Top>
-          <Bot>
-          <Title>Recent Projects</Title>
-            <Button/>
-          </Bot>
-          </ColWrap>
-        </Section>
+     
       </MainBox>
    
   )

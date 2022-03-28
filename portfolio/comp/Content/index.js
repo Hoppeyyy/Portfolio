@@ -22,16 +22,7 @@ color:${props=>props.color};
 text-align:left;
 font-size: 80px;
 line-height: 108px;
-animation-timing-function: cubic-bezier(1.000, 0.000, 0.000, 3.000);
-animation: title-anim 8s infinite; 
-animation-delay:1.5s;
-:hover{
-  color:${props=>props.color};
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-  
 
-}
 @media only screen and (max-width: 1025px){
   font-size: 55px;
   line-height: 63px;
@@ -41,21 +32,6 @@ animation-delay:1.5s;
   line-height: 48px;
   }
  
-  @keyframes title-anim {
-    0% {
-      transform: translate(0, 50px);
-      opacity:0;
-      color:rgba(102, 102, 102, 0.5);
-    }
-    40%{
-      transform: translate(0, 0px);
-    }
-    100% {
-      transform: translate(0, 0px);
-      opacity:1;
-      color:${props=>props.hcolor};
-    }
-  }
 
 `
 
@@ -63,20 +39,13 @@ const Content = styled.p`
 font-family: Cantarell;
 font-style: normal;
 font-weight: normal;
-color: rgba(102, 102, 102, 0.5);
+color: #EBEEF6;
 text-align:left;
 font-size: 24px;
 line-height: 34px;
 margin-bottom:0;
 margin-top:0;
-animation-duration: 10s;  
-transition:20s;
-animation-play-state: running;
-:hover{
-  color:#EBEEF6;
-  transition:1s;
-  animation-fill-mode: forwards;
-}
+
 
 @media only screen and (max-width: 1025px){
   font-size: 18px;

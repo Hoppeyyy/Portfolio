@@ -29,12 +29,9 @@ const Web = styled.div`
   }
 `
 const Mob = styled.div`
-@media only screen and (max-width: 600px){
-  width:100%;
   display:flex;
   flex-direction:column;
   align-items:flex-end;
-  }
   @media only screen and (min-width: 600px){
     display:none;
   }
@@ -53,14 +50,44 @@ flex-direction:row;
 margin-top:-5px;
 `
 const LinkSpan = styled.span`
-color:#999CA0;
+color:#EBEEF6;
 font-size: 18px;
 font-family: 'Raleway', sans-serif;
 font-weight:200;
 padding:0.5rem;
 margin-right:1.3rem;
 :hover{
-  color:#FFFFFF;
+
+    background-image: linear-gradient(
+      -200deg,
+      #4568dc 10%,
+      #b06ab3 80%
+    );
+      background-repeat: no-repeat;
+      background-position: 0 70%;
+      background-size: 100% 0.2em;
+      transition: background-size 0.40s ease-in;
+      animation: underline 0.40s;
+      @keyframes underline{
+        from{background-size:0% 0.2em;}
+        to{background-size:100% 0.2em;}
+      }
+  :active{
+    background-image: linear-gradient(
+      -200deg,
+      #4568dc 10%,
+      #b06ab3 80%
+    );
+      background-repeat: no-repeat;
+      background-position: 0 70%;
+      background-size: 100% 0.2em;
+      transition: background-size 0.40s ease-in;
+      animation: underline 0.40s;
+      @keyframes underline{
+        from{background-size:0% 0.2em;}
+        to{background-size:100% 0.2em;}
+      }
+  }
 }
 `
 const MenuCont = styled.div`
@@ -85,14 +112,30 @@ justify-content:center;
 align-items:center;
 `
 const MobLink = styled.span`
-color:#999CA0;
+color:#EBEEF6;
 font-size: 25px;
 font-family: 'Raleway', sans-serif;
 font-weight:200;
 padding:0.4rem;
 margin-top:40px;
+
 :hover{
-  color:#FFFFFF;
+  background-image: linear-gradient(
+    -200deg,
+    
+    #4568dc 10%,
+    #b06ab3 80%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
 }
 `
 const IconBox = styled.div`
@@ -107,7 +150,6 @@ const Nav = ({
   
   }) => {
     const router = useRouter();
-    //const [open, setOpen] = useState(false);
     const [isOpen, setOpen] = useState(false);
     const LinkedIn = './LinkedIn.svg'
     const LinkedIn_hover = './LinkedIn_hover.svg'
@@ -173,11 +215,11 @@ const Nav = ({
     }
      return<Cont>
        <Web>
-       <Link href="/#home" scroll={false}><Logo src="./logo.svg"/></Link>
+       <Link href="/" scroll={false}><Logo src="./logo.svg"/></Link>
        <LinkBox>
-        <Link href="/#about" scroll={false}><LinkSpan>About</LinkSpan></Link>
-        <Link href="/#work" scroll={false}><LinkSpan>Frontend</LinkSpan></Link>
-        <Link href="/#contact" scroll={false}><LinkSpan>Contact</LinkSpan></Link>
+        <Link href="/about" scroll={false}><LinkSpan>About</LinkSpan></Link>
+        <Link href="/projects" scroll={false}><LinkSpan>Frontend</LinkSpan></Link>
+        <Link href="/contact" scroll={false}><LinkSpan>Contact</LinkSpan></Link>
        </LinkBox>
        </Web>
         <Mob>
@@ -185,9 +227,9 @@ const Nav = ({
         <MenuCont height={height} width={width} display={display}>
         <Link href="/#home" scroll={false}><MobLogo src="./logo.svg"/></Link>
         <MobLinkBox>
-        <Link href="/#about" scroll={false}><MobLink>About</MobLink></Link>
-        <Link href="/#work" scroll={false}><MobLink>Frontend</MobLink></Link>
-        <Link href="/#contact" scroll={false}><MobLink>Contact</MobLink></Link>
+        <Link href="/about" scroll={false}><MobLink>About</MobLink></Link>
+        <Link href="/projects" scroll={false}><MobLink>Frontend</MobLink></Link>
+        <Link href="/contact" scroll={false}><MobLink>Contact</MobLink></Link>
        </MobLinkBox>
        <IconBox>
           <ImageChangeOnMouseOver/>

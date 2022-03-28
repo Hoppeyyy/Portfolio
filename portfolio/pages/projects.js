@@ -39,6 +39,7 @@ height:80%;
 display:flex;
 @media only screen and (max-width: 600px){
 flex-direction:column;
+justify-content:center;
 align-items:center;
 }
 @media only screen and (min-width 600px){
@@ -59,9 +60,6 @@ align-items:left;
 flex-direction:column;
 padding-left:4rem;
 justify-content:center;
-@media only screen and (max-width: 600px){
-  padding-left:3rem;
-  }
 `
 
 const Right = styled.div`
@@ -113,9 +111,7 @@ const Position = styled.h2`
 margin:0;
 font-family: 'Playfair Display', serif;
 font-size:45px;
-@media only screen and (max-width: 600px){
-  font-size:30px;
-  }
+
 `
 const Intro = styled.p`
 margin:0;
@@ -130,10 +126,6 @@ line-height: 24px;
 const Robot = styled.img`
 width:350px;
 height:350px;
-@media only screen and (max-width: 600px){
-width:250px;
-height:250px;
-  }
 `
 const Top = styled.div`
 display:flex;
@@ -172,9 +164,8 @@ display: inline-block;
     background-position: 200% center;
   }
 }
-@media only screen and (max-width: 600px){
-  font-size:30px;
-  }
+
+}
 `
 const Sub = styled.p`
 width:50%;
@@ -227,48 +218,22 @@ export default function Home() {
   const router = useRouter();
   return (
       <MainBox>
-        {/* ================= Home ====================== */}
+        {/* ================= Projects ====================== */}
         <Section id="home">
           <HeaderBox>
             <Nav onMenuClick={toggle}/>
           </HeaderBox>
           <RowWrap>
           <Left>
-            <Name>
-              Hi there, I'm Chisaki 
-              <span role="img" aria-label="Waving Hand"> 👋</span>
-            </Name>
-            <TextAnim>
-            <Position>Frontend developer</Position>
-            <Position>UI/UX Designer</Position>
-            </TextAnim>
-            <Intro>I have specialized in both design and development for web and mobile with a solid understanding of UI / UX.</Intro>
+
           </Left>
           <Right>
-            <Robot src="/AboutMe_Robot.svg"/>
+         
           </Right>
           </RowWrap>
           <FooterBox>
             <Footer/>
           </FooterBox>
-        </Section>
-          {/* ================= Intro ====================== */}
-          <Section>
-          <ColWrap>
-          <Top>
-            <Sub>Curious and Creative</Sub>
-            <Main>Chisaki Nakamura is a junior frontend developer based in Vancouver, BC.</Main>
-            <Sub>
-              I have been studying in the digital design and development program at BCIT since 2020
-              and am expected to graduate in June 2022. 
-              Also, Currently working as React Native Developer at Guessfit.
-            </Sub>
-          </Top>
-          <Bot>
-          <Title>Recent Projects</Title>
-            <Button/>
-          </Bot>
-          </ColWrap>
         </Section>
       </MainBox>
    
