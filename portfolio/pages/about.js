@@ -7,8 +7,6 @@ import Button from '../comp/Button'
 import useCursorHandlers from "../hooks/useCursorHandlers";
 import {useRouter} from 'next/router'
 
-
-
 const MainBox = styled.div`
 width:100vw;
 height:100vh;
@@ -33,108 +31,22 @@ position:absolute;
 height:50px; top:0; left:0; right:0px; 
 
 `
-const RowWrap = styled.div`
-min-width:100%;
-height:80%;
-display:flex;
-@media only screen and (max-width: 600px){
-flex-direction:column;
-justify-content:center;
-align-items:center;
-}
-@media only screen and (min-width 600px){
-  flex-direction:row;
-}
-`
+
 const ColWrap = styled.div`
 min-width:100%;
 height:80%;
 display:flex;
 flex-direction:column;
 align-items:center;
-`
-const Left = styled.div`
-display:flex;
-flex:1;
-align-items:left;
-flex-direction:column;
-padding-left:4rem;
-justify-content:center;
+
 `
 
-const Right = styled.div`
-display:flex;
-flex:1;
-justify-content:center;
-align-items:center;
-`
 const FooterBox = styled.div`
 position:absolute; right:0;left:0;
 height:70px; 
 bottom:0;
 
 `
-const TextAnim = styled.div`
-  background-image: linear-gradient(
-    -225deg,
-    #b06ab3 0%,
-    #4568dc 50%,
-    #b06ab3 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 6s linear infinite;
-  display: inline-block;
-  @keyframes textclip {
-    to {
-      background-position: 200% center;
-    }
-  }
-
-}
-`
-const Name = styled.h3`
-margin:0;
-font-family: 'Raleway', sans-serif;
-font-weight:200;
-color:#EBEEF6;
-font-size:20px;
-padding-bottom:1rem;
-`
-const Position = styled.h2`
-margin:0;
-font-family: 'Playfair Display', serif;
-font-size:45px;
-
-`
-const Intro = styled.p`
-margin:0;
-max-width:80%;
-font-family: 'Raleway', sans-serif;
-font-weight:200;
-color:#EBEEF6;
-font-size:16px;
-margin-top:1rem;
-line-height: 24px;
-`
-const Profile = styled.img`
-width:250px;
-height:250px;
-border-radius:10px;
--webkit-filter: grayscale(20%); /* Safari 6.0 - 9.0 */
-filter: grayscale(20%);
-:hover{
-  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-filter: grayscale(0%);
-}
-`
-
 const Top = styled.div`
 width:100%;
 height:350px;
@@ -163,23 +75,28 @@ display:flex;
 flex-direction:column;
 align-items:center;
 `
-const Para1 = styled.div`
-display:flex;
-flex-direction:row;
-padding:1.5rem;
-`
+
 const Set = styled.div`
+width:60%;
 display:flex;
 flex-direction:column;
+align-items:center;
+padding:1.5rem;
+@media only screen and (max-width: 600px){
+  padding:0.3rem;
+  }
 `
 const ToolBox = styled.div`
-width:200px;
-height:80px;
 display:flex;
 flex-wrap:wrap;
+margin-top:1rem;
+justify-content:center;
+padding:0.2rem;
+@media only screen and (max-width: 600px){
+  margin-top:0.5rem;
+  }
 `
 const Sub = styled.p`
-width:50%;
 margin:0;
 font-family: 'Raleway', sans-serif;
 font-weight:200;
@@ -187,16 +104,20 @@ color: #aaa9ad;
 font-size:14px;
 margin-top:1rem;
 line-height: 20px;
-text-align:left;
+text-align:center;
+align-items:center;
+justify-content:center;
+@media only screen and (max-width: 600px){
+  margin-top:0.5rem;
+  }
 `
 const Main = styled.h3`
-width:50%;
 margin:0;
 font-family: 'Playfair Display', serif;
 font-size:20px;
 margin-top:1rem;
 line-height: 24px;
-text-align:left;
+text-align:center;
 background-image: linear-gradient(
   -200deg,
   #e2e2e3 0%,
@@ -216,7 +137,53 @@ text-fill-color: transparent;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 display: inline-block;
+@media only screen and (max-width: 600px){
+  margin-top:1rem;
+  line-height: 20px;
+  }
+`
+const Logo = styled.img`
+margin:5px;
+`
+const Icon = styled.img`
+width:30px;
+height:30px;
 
+`
+const ProcessBox = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+@media only screen and (max-width: 800px){
+ flex-wrap:wrap;
+  }
+
+`
+const Process = styled.div`
+width:80px;
+height:80px;
+border-radius:80px;
+background-color:#212121;
+box-shadow: 10px 4px  10px rgba(0,0,0,0.3), -10px 4px 10px rgba(0,0,0,0.2);
+display:flex;
+justify-content:center;
+align-items:center;
+@media only screen and (max-width: 600px){
+  width:50px;
+  height:50px;
+  border-radius:50px;
+  margin:10px;
+  }
+`
+const Box = styled.div`
+width:90%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+@media only screen and (max-width: 600px){
+  padding:0.3rem;
+  }
 `
 export default function About() {
   const [showMe, setShowMe] = useState(false);
@@ -230,12 +197,14 @@ export default function About() {
       <MainBox>
           {/* ================= About ====================== */}
        <Section>
-          <ColWrap>
+       <HeaderBox>
+            <Nav onMenuClick={toggle}/>
+        </HeaderBox>
+        <ColWrap>
           <Top>
           <AboutImg src="/AboutMe.svg"/>
           </Top>
           <Bot>
-          <Para1>
           <Set>
           <Main>What I do</Main>
             <Sub>
@@ -245,31 +214,120 @@ export default function About() {
           <Set>
           <Main>Tools</Main>
             <ToolBox>
-              
+              <Logo src="/html.svg"/>
+              <Logo src="/css.svg"/>
+              <Logo src="/js.svg"/>
+              <Logo src="/react.svg" style={{marginLeft:"-5px", marginRight:"-5px"}}/>
+              <Logo src="/next.svg"/>
+              <Logo src="/figma.svg"/>
+              <Logo src="/php.svg"/>
+              <Logo src="/node.svg"/>
+              <Logo src="/firebase.svg"/>
+              <Logo src="/vercel.svg"/>
+              <Logo src="/docker.svg"/>
+              <Logo src="/adobe.svg" style={{marginLeft:"-20px", marginRight:"-20px"}}/>
             </ToolBox>
           </Set>
-          </Para1>
           </Bot>
-          </ColWrap>
-        </Section>
-        {/* ================= About ====================== */}
-        <Section id="about">
-          <HeaderBox>
-            <Nav onMenuClick={toggle}/>
-          </HeaderBox>
-          <RowWrap>
-          <Left>
-          <Profile src="/MyProfile.JPG"/>
-          </Left>
-          <Right>
-           
-          </Right>
-          </RowWrap>
-          <FooterBox>
+          <Box style={{padding:0}}>
+              <Set>
+              <Main>Design Process</Main>
+              <Sub>
+              Coming up with new innovative ideas and visualizing them are the favorite parts of my job. 
+              To ensure that the final product will help people and be easy to use, I listen carefully to the needs and demands of users during the design process.
+              </Sub>
+              </Set>
+              <ProcessBox>
+                <Set>
+                <Process>
+                  <Icon src="/bulb.svg"/>
+                </Process>
+                <Sub>Identify Problems and Solutions</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/research.svg"/>
+                </Process>
+                <Sub>User Research</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/wireframe.svg"/>
+                </Process>
+                <Sub>Wireframing</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/design.svg"/>
+                </Process>
+                <Sub>Low-Fi / High-Fi</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/usertest.svg"/>
+                </Process>
+                <Sub>User Testing</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/check.svg"/>
+                </Process>
+                <Sub>Finalize Design</Sub>
+                </Set>
+              </ProcessBox>
+            </Box>
+            <Box style={{padding:0}}>
+              <Set>
+              <Main>Development Process</Main>
+              <Sub>
+              In the development process, I focus on writing maintainable, secured, fast to load code. 
+              Also, I work closely with designers to make sure the design concepts are functioning on the browser to make the final product usable, functional, and beautiful.
+              </Sub>
+              </Set>
+              <ProcessBox style ={{marginBottom:"5rem"}}>
+                <Set>
+                <Process>
+                  <Icon src="/code.svg"/>
+                </Process>
+                <Sub>Decide Platform and Environment</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/identify.svg"/>
+                </Process>
+                <Sub>Identify Components and Functions</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/build.svg"/>
+                </Process>
+                <Sub>Build Components, Functions, and Pages</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/debag.svg"/>
+                </Process>
+                <Sub>Debagging</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/usertest.svg"/>
+                </Process>
+                <Sub>User Testing</Sub>
+                </Set>
+                <Set>
+                <Process>
+                  <Icon src="/debag.svg"/>
+                </Process>
+                <Sub>Debagging</Sub>
+                </Set>
+              </ProcessBox>
+            </Box>
+        </ColWrap>
+        <FooterBox>
             <Footer/>
-          </FooterBox>
+        </FooterBox>
         </Section>
-     
       </MainBox>
    
   )
