@@ -60,6 +60,9 @@ align-items:left;
 flex-direction:column;
 padding-left:6rem;
 justify-content:center;
+@media only screen and (max-width: 600px){
+  padding-left:0;
+}
 `
 
 const Right = styled.div`
@@ -74,31 +77,7 @@ height:70px;
 bottom:0;
 
 `
-const TextAnim = styled.div`
-  background-image: linear-gradient(
-    -225deg,
-    #b06ab3 0%,
-    #4568dc 50%,
-    #b06ab3 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 6s linear infinite;
-  display: inline-block;
-  @keyframes textclip {
-    to {
-      background-position: 200% center;
-    }
-  }
 
-}
-`
 const Name = styled.h3`
 margin:0;
 font-family: 'Raleway', sans-serif;
@@ -147,7 +126,7 @@ export default function Home() {
           </HeaderBox>
           <RowWrap>
           <Left>
-           
+           <Profile src="/MyProfile.JPG"/>
           </Left>
           <Right>
           

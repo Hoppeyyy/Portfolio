@@ -44,12 +44,10 @@ height:80%;
 display:flex;
 @media only screen and (max-width: 600px){
 flex-direction:column;
-justify-content:center;
 align-items:center;
+padding:1.5rem;
 }
-@media only screen and (min-width 600px){
-  flex-direction:row;
-}
+
 `
 const Left = styled.div`
 display:flex;
@@ -65,19 +63,25 @@ flex:1;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+@media only screen and (max-width: 600px){
+  padding-bottom:1.5rem;
+  }
 `
 const FooterBox = styled.div`
 position:absolute; right:0;left:0;
 height:70px; bottom:0;
-
 `
 const Img = styled.img`
 width:400px;
 height:400px;
 @media only screen and (max-width: 600px){
-width:250px;
-height:250px;
+width:200px;
+height:200px;
 }
+@media only screen and (max-width: 1024px){
+  width:300px;
+  height:300px;
+  }
 `
 const Button = styled.div`
 width:200px;
@@ -97,6 +101,10 @@ font-size:20px;
   background:#3BA99C;
   color:#FFFFFF;
 }
+@media only screen and (max-width: 600px){
+  width:180px;
+  height:50px;
+  }
 `
 const BackCont = styled.div`
 width:100%;
@@ -124,8 +132,9 @@ export default function Retheraphy(){
           <Content
           color="#40B04D"
           title="Retheraphy"
-          text={"A goal of the app is to be your therapist that shows the potential illnesses you may have and improve your mental health."}
-          text2={" Our small-scale test helps you to check your mental health condition. We analyze and evaluate your answers from the test you take and show your percentages of the chance to have the top 3 mental illnesses."}
+          text={
+            "A goal of the app is to be your therapist that shows the potential illnesses you may have and improve your mental health. Our small-scale test helps you to check your mental health condition. We analyze and evaluate your answers from the test you take and show your percentages of the chance to have the top 3 mental illnesses."
+          }
           slogan={"Check and Take Care Your Mental Health"}
           sgcolor="#FFC44F"
           />

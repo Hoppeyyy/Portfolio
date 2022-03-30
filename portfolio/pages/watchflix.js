@@ -82,9 +82,9 @@ height:250px;
 const Button = styled.div`
 width:180px;
 height:60px;
-background:#7B8EFF;
+background:#E39A9A;
 border-radius:30px;
-color:#FFFFFF;
+color:#414141;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -93,7 +93,8 @@ font-style: normal;
 font-weight: normal;
 font-size:20px;
 :hover{
-  background:#6853E9;
+  background:#C34F4F;
+  color:#FFFFFF;
 }
 @media only screen and (max-width: 600px){
   width:180px;
@@ -120,21 +121,21 @@ export default function Rooma(){
           <Left>
           <BackCont>
           <Back
-          src="./rooma_back.svg"
+          src="./watchflix_back.svg"
           />
           </BackCont>
           <Content
-          color="#924FC3"
-          title="Rooma"
-          text={"Rooma is a scheduling and communication aids application for people who live together. The app is designed for people to communicate with each other regarding house rules and chores. Also, on the app, people would be able to find new roommates."}
-          slogan={"Your Stress-Free Living Starts Now"}
+          color="#C34F4F"
+          title="Watchflix"
+          text={"Watchflix is a platform that provides movie lists with movie descriptions by using Kaggle dataset. Also, Watchflix can be the discussion place where users can make comments on the movies."}
+          slogan={"Find and Share your Favorite Movies"}
           sgcolor="#FFC44F"
           />
           
           </Left>
           <Right>
-           <Img src="./rooma.svg"/>
-           <Button><a href="https://rooma.ca/login" target="_blank" rel="noreferrer">Visit Rooma</a></Button>
+           <Img src="./watchflix_img.svg"/>
+           <Button><a href="https://github.com/Hoppeyyy/Watchflix" target="_blank" rel="noreferrer">Visit Watchflix</a></Button>
           </Right>
           </Wrap>
           <FooterBox>

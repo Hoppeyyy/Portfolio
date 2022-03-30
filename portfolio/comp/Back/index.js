@@ -29,7 +29,7 @@ const Back = ({
   const router = useRouter();
  
 return<Cont>
-  <Img src={src}  onClick={()=>router.push("/#work")}/>
+  <Img src={src}  onClick={()=>router.push("/projects")}/>
   <Text>Back</Text>
 </Cont>
 }
