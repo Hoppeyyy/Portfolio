@@ -190,7 +190,7 @@ export default function Projects() {
             onClick={()=>router.push("/watchflix")}
             />
             <Work
-            src="/Roomalogo.svg"
+            src="/roomalogo.svg"
             title="Rooma"
             about="web application"
             year="2021"
@@ -199,7 +199,7 @@ export default function Projects() {
             onClick={()=>router.push("/rooma")}
             />
              <Work
-            src="/Retheraphylogo.svg"
+            src="/retheraphylogo.svg"
             title="Retheraphy"
             about="mobile application"
             year="2020"

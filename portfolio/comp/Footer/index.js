@@ -29,14 +29,14 @@ font-size:14px;
 const Footer = ({
 
 })=>{
-    const LinkedIn = './LinkedIn.svg'
-    const LinkedIn_hover = './LinkedIn_hover.svg'
-    const Insta = './Insta.svg'
-    const Insta_hover = './Insta_hover.svg'
-    const Behance = './Behance.svg'
-    const Behance_hover = './Behance_hover.svg'
-    const Github = './Github.svg'
-    const Github_hover = './Github_hover.png'
+    const LinkedIn = "/LinkedIn.svg"
+    const LinkedIn_hover = "/LinkedIn_hover.svg"
+    const Insta = "/Insta.svg"
+    const Insta_hover = "/Insta_hover.svg"
+    const Behance = "/Behance.svg"
+    const Behance_hover = "/Behance_hover.svg"
+    const Github = "/Github.svg"
+    const Github_hover = "/github_hover.png"
 
     const ImageToggleOnMouseOver = ({primaryImg, secondaryImg}) => {
       const imageRef = useRef(null);
