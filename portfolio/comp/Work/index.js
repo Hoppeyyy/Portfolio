@@ -65,23 +65,7 @@ line-height: 42px;
 margin:0;
 color:#EBEEF6;
 opacity:0.9;
-${Content}:hover & {
-  background-image: linear-gradient(
-    -200deg,
-    #36d1dc  0%,
-    #5b86e5 50%,
-    #36d1dc  100%
-  );
-background-size: auto auto;
-background-clip: border-box;
-background-size: 200% auto;
-color: #fff;
-background-clip: text;
-text-fill-color: transparent;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-display: inline-block;
-}
+
 `
 const Sub = styled.h5`
 font-family: 'Raleway', sans-serif;

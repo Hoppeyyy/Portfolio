@@ -5,10 +5,10 @@ import {device} from '../device'
 
 
 const Cont = styled.div`
-
 display:flex;
 flex-direction:column;
 padding:1.5rem;
+padding-top:1.5rem;
 `
 
 const Title = styled.h3`
@@ -24,6 +24,11 @@ line-height: 60px;
   font-size: 40px;
   line-height: 48px;
   }
+  @media only screen and (max-width: 600px){
+    margin-top:-10px;
+    margin-bottom:15px;
+    line-height:20px;
+    }
 `
 
 const Content = styled.p`
@@ -32,8 +37,8 @@ font-style: normal;
 font-weight: normal;
 color: #EBEEF6;
 text-align:left;
-font-size: 18px;
-line-height: 32px;
+font-size: 16px;
+line-height: 26px;
 margin-bottom:0;
 margin-top:0;
 
@@ -51,8 +56,6 @@ const HomeTitle = ({
   title="Title",
   color="",
   text="content text",
-  text2="",
-  text3="",
   slogan="",
   sgcolor="",
 })=>{
@@ -60,7 +63,7 @@ const HomeTitle = ({
 
 return<Cont>
  <Title color={color}>{title} </Title>
-<Content>{text}<br/>{text2}<br/>{text3}</Content>
+<Content>{text}</Content>
 <Content style={{fontWeight:"bold",color:sgcolor}}>{slogan}</Content>
 </Cont>
 }

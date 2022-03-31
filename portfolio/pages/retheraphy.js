@@ -46,6 +46,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 padding:1.5rem;
+padding-top:0;
 }
 
 `
@@ -109,7 +110,7 @@ font-size:20px;
 const BackCont = styled.div`
 width:100%;
 margin-left:3rem;
-margin-top:-4rem;
+
 `
 export default function Retheraphy(){
   const [showMe, setShowMe] = useState(false);

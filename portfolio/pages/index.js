@@ -30,8 +30,11 @@ background-color:#212121;
 `
 const HeaderBox = styled.div`
 position:absolute; 
-height:50px; top:0; left:0; right:0px; 
-
+height:80px; top:0; left:0; right:0px; 
+background-color:#212121;
+@media only screen and (max-width: 600px){
+  height:50px; top:0; left:0; right:0px; 
+  }
 `
 const RowWrap = styled.div`
 min-width:100%;

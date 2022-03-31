@@ -68,7 +68,7 @@ const Bot = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
-margin-top:2rem;
+margin-top:3rem;
 `
 const ProjectImg = styled.img`
 width:250px;

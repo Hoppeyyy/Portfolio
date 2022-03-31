@@ -28,8 +28,11 @@ background-color:#212121;
 `
 const HeaderBox = styled.div`
 position:absolute; 
-height:50px; top:0; left:0; right:0px; 
-
+height:80px; top:0; left:0; right:0px; 
+background-color:#212121;
+@media only screen and (max-width: 600px){
+  height:50px; top:0; left:0; right:0px; 
+  }
 `
 
 const ColWrap = styled.div`
@@ -99,7 +102,6 @@ padding:0.2rem;
 const Sub = styled.p`
 margin:0;
 font-family: 'Raleway', sans-serif;
-font-weight:200;
 color: #aaa9ad;
 font-size:14px;
 margin-top:1rem;
@@ -242,37 +244,37 @@ export default function About() {
                 <Process>
                   <Icon src="/bulb.svg"/>
                 </Process>
-                <Sub>Identify Problems and Solutions</Sub>
+                <Sub style={{fontWeight:200}}>Identify Problems and Solutions</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/research.svg"/>
                 </Process>
-                <Sub>User Research</Sub>
+                <Sub style={{fontWeight:200}}>User Research</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/wireframe.svg"/>
                 </Process>
-                <Sub>Wireframing</Sub>
+                <Sub style={{fontWeight:200}}>Wireframing</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/design.svg"/>
                 </Process>
-                <Sub>Low-Fi / High-Fi</Sub>
+                <Sub style={{fontWeight:200}}>Low-Fi / High-Fi</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/usertest.svg"/>
                 </Process>
-                <Sub>User Testing</Sub>
+                <Sub style={{fontWeight:200}}>User Testing</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/check.svg"/>
                 </Process>
-                <Sub>Finalize Design</Sub>
+                <Sub style={{fontWeight:200}}>Finalize Design</Sub>
                 </Set>
               </ProcessBox>
             </Box>
@@ -289,37 +291,37 @@ export default function About() {
                 <Process>
                   <Icon src="/code.svg"/>
                 </Process>
-                <Sub>Decide Platform and Environment</Sub>
+                <Sub style={{fontWeight:200}}>Decide Platform and Environment</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/identify.svg"/>
                 </Process>
-                <Sub>Identify Components and Functions</Sub>
+                <Sub style={{fontWeight:200}}>Identify Components and Functions</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/build.svg"/>
                 </Process>
-                <Sub>Build Components, Functions, and Pages</Sub>
+                <Sub style={{fontWeight:200}}>Build Components, Functions, and Pages</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/debag.svg"/>
                 </Process>
-                <Sub>Debagging</Sub>
+                <Sub style={{fontWeight:200}}>Debagging</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/usertest.svg"/>
                 </Process>
-                <Sub>User Testing</Sub>
+                <Sub style={{fontWeight:200}}>User Testing</Sub>
                 </Set>
                 <Set>
                 <Process>
                   <Icon src="/debag.svg"/>
                 </Process>
-                <Sub>Debagging</Sub>
+                <Sub style={{fontWeight:200}}>Debagging</Sub>
                 </Set>
               </ProcessBox>
             </Box>

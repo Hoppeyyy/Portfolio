@@ -44,8 +44,9 @@ height:80%;
 display:flex;
 @media only screen and (max-width: 600px){
 flex-direction:column;
-justify-content:center;
 align-items:center;
+padding:1.5rem;
+padding-top:0;
 }
 @media only screen and (min-width 600px){
   flex-direction:row;
@@ -65,6 +66,9 @@ flex:1;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+@media only screen and (max-width: 600px){
+  padding-bottom:1.5rem;
+  }
 `
 const FooterBox = styled.div`
 position:absolute; right:0;left:0;
@@ -103,7 +107,8 @@ font-size:20px;
 const BackCont = styled.div`
 width:100%;
 margin-left:3rem;
-margin-top:-4rem;
+
+
 `
 export default function Rooma(){
   const [showMe, setShowMe] = useState(false);
