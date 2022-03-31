@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import {useRouter} from 'next/router'
 import React,{useState} from 'react';
 import Back from "../comp/Back"
+import Contact from '../comp/Contact';
 
 const MainBox = styled.div`
 width:100%;
@@ -107,19 +108,56 @@ font-size:20px;
 const BackCont = styled.div`
 width:100%;
 margin-left:3rem;
-
-
+`
+const ContactSection = styled.div`
+min-width: 100%;
+min-height: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
 `
 export default function Rooma(){
   const [showMe, setShowMe] = useState(false);
+  const [openContact, setContact] = useState(false);
   function toggle(){
     setShowMe(!showMe);
   }
   const router = useRouter();
+  const onContactClicked = ()=>{
+    if(openContact === false){
+      setContact(true);
+    }else{
+      setContact(false);
+    }
+ 
+  }
   return(<MainBox>
+          {openContact ? (
+         <ContactSection>
+            <HeaderBox>
+            <Nav 
+            onMenuClick={toggle}
+            bkimg3={openContact? "":"linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)"}
+            ContactClick={onContactClicked}
+            ContactMobClick={onContactClicked}
+            bkimg4={openContact? "linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)":""}
+            />
+          </HeaderBox>
+           <Contact CloseClick={onContactClicked}/>
+           <FooterBox>
+            <Footer/>
+          </FooterBox>
+        </ContactSection>):(
+    <MainBox>
     <Section>
           <HeaderBox>
-            <Nav onMenuClick={toggle}/>
+            <Nav 
+               onMenuClick={toggle}
+               bkimg3={openContact? "":"linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)"}
+               ContactClick={onContactClicked}
+               ContactMobClick={onContactClicked}
+               bkimg4={openContact? "linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)":""}
+            />
           </HeaderBox>
           <Wrap>
           <Left>
@@ -146,6 +184,8 @@ export default function Rooma(){
             <Footer/>
           </FooterBox>
         </Section>
+      </MainBox>
+        )}
   </MainBox>
 
   )
