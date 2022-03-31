@@ -6,16 +6,25 @@ const Cont = styled.section`
 @media only screen and (max-width: 600px){
   display:none;
   }
-@media only screen and (min-width 600px){
-  display:flex;
-  height:10vh;
- 
-}
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+
 `
 
 const IconBox = styled.div`
 padding-left:2rem;
 
+`
+const TextCont = styled.div`
+padding-right:2rem;
+`
+const Text = styled.p`
+color:#999CA0;
+margin-top:5px;
+font-family: 'Raleway', sans-serif;
+font-weight:200;
+font-size:14px;
 `
 const Footer = ({
 
@@ -78,6 +87,9 @@ const Footer = ({
       <IconBox>
       <ImageChangeOnMouseOver/>
       </IconBox>
+      <TextCont>
+        <Text>Designed and Developed by Chisaki Nakamura | 2022</Text>
+      </TextCont>
   </Cont>
 }
 

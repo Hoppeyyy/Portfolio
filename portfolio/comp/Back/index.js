@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {useRouter} from 'next/router'
 
 const Cont = styled.div`
-width:105px;
+width:80px;
 height:40px;
 display:flex;
 flex-direction:row;
@@ -12,14 +12,13 @@ justify-content:space-between;
 align-items:center;
 `
 const Img = styled.img`
-width:30px;
-height:30px;
+width:22px;
+height:22px;
 `
 const Text = styled.p`
 font-family: Cantarell;
 font-style: normal;
-font-weight: bold;
-font-size: 24px;
+font-size: 16px;
 color: #EBEEF6;
 `
 const Back = ({
@@ -29,7 +28,7 @@ const Back = ({
   const router = useRouter();
  
 return<Cont>
-  <Img src={src}  onClick={()=>router.push("/#work")}/>
+  <Img src={src}  onClick={()=>router.push("/projects")}/>
   <Text>Back</Text>
 </Cont>
 }
