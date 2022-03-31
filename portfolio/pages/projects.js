@@ -6,6 +6,7 @@ import Footer from '../comp/Footer'
 import Work from '../comp/Work'
 import useCursorHandlers from "../hooks/useCursorHandlers";
 import {useRouter} from 'next/router'
+import Contact from '../comp/Contact';
 
 const MainBox = styled.div`
 width:100vw;
@@ -61,8 +62,10 @@ background-image: linear-gradient(
   #5b86e5 50%,
   #36d1dc  100%
 );
-
 z-index:1;
+@media only screen and (max-width: 600px){
+  z-index:0;
+}
 `
 const Bot = styled.div`
 display:flex;
@@ -117,20 +120,58 @@ margin-bottom:5rem;
   flex-direction:column;
   }
 `
+const ContactSection = styled.div`
+min-width: 100%;
+min-height: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+`
 export default function Projects() {
   const [showMe, setShowMe] = useState(false);
+  const [openContact, setContact] = useState(false);
   function toggle(){
     setShowMe(!showMe);
   }
   const cursorHandlers = useCursorHandlers();
 
   const router = useRouter();
+  const onContactClicked = ()=>{
+    if(openContact === false){
+      setContact(true);
+    }else{
+      setContact(false);
+    }
+ 
+  }
   return (
       <MainBox>
-        {/* ================= Projects ====================== */}
+          {openContact ? (
+         <ContactSection>
+            <HeaderBox>
+            <Nav 
+            onMenuClick={toggle}
+            bkimg3={openContact? "":"linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)"}
+            ContactClick={onContactClicked}
+            ContactMobClick={onContactClicked}
+            bkimg4={openContact? "linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)":""}
+            />
+          </HeaderBox>
+           <Contact CloseClick={onContactClicked}/>
+           <FooterBox>
+            <Footer/>
+          </FooterBox>
+        </ContactSection>):(
+        <MainBox>
         <Section>
           <HeaderBox>
-            <Nav onMenuClick={toggle}/>
+            <Nav 
+            onMenuClick={toggle}
+            bkimg3={openContact? "":"linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)"}
+            ContactClick={onContactClicked}
+            ContactMobClick={onContactClicked}
+            bkimg4={openContact? "linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)":""}
+            />
           </HeaderBox>
           <ColWrap>
             <Top>
@@ -173,6 +214,8 @@ export default function Projects() {
             <Footer/>
           </FooterBox>
         </Section>
+        </MainBox>
+        )}
       </MainBox>
    
   )

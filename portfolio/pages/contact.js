@@ -46,13 +46,7 @@ align-items:center;
   flex-direction:row;
 }
 `
-const ColWrap = styled.div`
-min-width:100%;
-height:80%;
-display:flex;
-flex-direction:column;
-align-items:center;
-`
+
 const Left = styled.div`
 display:flex;
 flex:1;
@@ -68,7 +62,7 @@ justify-content:center;
 const Right = styled.div`
 display:flex;
 flex:1;
-justify-content:center;
+justify-content:left;
 align-items:center;
 `
 const FooterBox = styled.div`
@@ -77,38 +71,33 @@ height:70px;
 bottom:0;
 
 `
-
-const Name = styled.h3`
-margin:0;
-font-family: 'Raleway', sans-serif;
-font-weight:200;
-color:#EBEEF6;
-font-size:20px;
-padding-bottom:1rem;
-`
-const Position = styled.h2`
-margin:0;
-font-family: 'Playfair Display', serif;
-font-size:45px;
-
-`
-const Intro = styled.p`
-margin:0;
-max-width:80%;
-font-family: 'Raleway', sans-serif;
-font-weight:200;
-color:#EBEEF6;
-font-size:16px;
-margin-top:1rem;
-line-height: 24px;
-`
 const Profile = styled.img`
 width:250px;
 height:250px;
 border-radius:10px;
 `
+const InfoTitle = styled.h3`
+margin:0;
+font-family: 'Raleway', sans-serif;
+font-weight:200;
+color:#EBEEF6;
+font-size:20px;
+padding:0.5rem;
+`
+const Info = styled.p`
+margin:0;
+font-family: 'Raleway', sans-serif;
+font-weight:200;
+color:#EBEEF6;
+font-size:16px;
+line-height: 24px;
+padding:0.5rem;
+`
+const Set = styled.div`
+display:flex;
+flex-direction:row;
 
-
+`
 export default function Home() {
   const [showMe, setShowMe] = useState(false);
   function toggle(){
@@ -122,14 +111,24 @@ export default function Home() {
         {/* ================= Home ====================== */}
         <Section id="home">
           <HeaderBox>
-            <Nav onMenuClick={toggle}/>
+            <Nav 
+            onMenuClick={toggle}
+            bkimg4="linear-gradient(
+              -200deg,
+              #4568dc 10%,
+              #b06ab3 80%
+            )"
+            />
           </HeaderBox>
           <RowWrap>
           <Left>
            <Profile src="/MyProfile.JPG"/>
           </Left>
           <Right>
-          
+          <Set>
+            <InfoTitle>Name</InfoTitle>
+            <Info>Chisaki Nakamura</Info>
+          </Set>
           </Right>
           </RowWrap>
           <FooterBox>

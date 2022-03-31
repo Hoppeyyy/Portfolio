@@ -6,6 +6,7 @@ import Footer from '../comp/Footer'
 import Button from '../comp/Button'
 import useCursorHandlers from "../hooks/useCursorHandlers";
 import {useRouter} from 'next/router'
+import Contact from '../comp/Contact';
 
 
 
@@ -219,21 +220,58 @@ text-fill-color: transparent;
 display: inline-block;
 
 `
-
+const ContactSection = styled.div`
+min-width: 100%;
+min-height: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+`
 export default function Home() {
   const [showMe, setShowMe] = useState(false);
+  const [openContact, setContact] = useState(false);
   function toggle(){
     setShowMe(!showMe);
   }
   const cursorHandlers = useCursorHandlers();
 
   const router = useRouter();
+  const onContactClicked = ()=>{
+    if(openContact === false){
+      setContact(true);
+    }else{
+      setContact(false);
+    }
+ 
+  }
   return (
       <MainBox>
-        {/* ================= Home ====================== */}
-        <Section id="home">
+         {openContact ? (
+         <ContactSection>
+            <HeaderBox>
+            <Nav 
+            onMenuClick={toggle}
+            bkimg1={openContact? "":"linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)"}
+            ContactClick={onContactClicked}
+            ContactMobClick={onContactClicked}
+            bkimg4={openContact? "linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)":""}
+            />
+          </HeaderBox>
+           <Contact CloseClick={onContactClicked}/>
+           <FooterBox>
+            <Footer/>
+          </FooterBox>
+        </ContactSection>):(
+          <MainBox>
+          <Section>
           <HeaderBox>
-            <Nav onMenuClick={toggle}/>
+            <Nav 
+            onMenuClick={toggle}
+            bkimg1={openContact? "":"linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)"}
+            ContactClick={onContactClicked}
+            ContactMobClick={onContactClicked}
+            bkimg4={openContact? "linear-gradient(-200deg, #4568dc 10%, #b06ab3 80%)":""}
+            />
           </HeaderBox>
           <RowWrap>
           <Left>
@@ -255,8 +293,7 @@ export default function Home() {
             <Footer/>
           </FooterBox>
         </Section>
-          {/* ================= Intro ====================== */}
-          <Section>
+        <Section>
           <ColWrap>
           <Top>
             <Sub>Curious and Creative</Sub>
@@ -273,6 +310,9 @@ export default function Home() {
           </Bot>
           </ColWrap>
         </Section>
+        </MainBox>
+         )}
+        
       </MainBox>
    
   )
