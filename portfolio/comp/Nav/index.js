@@ -8,7 +8,7 @@ import Link from 'next/link'
 const Cont = styled.section`
 @media only screen and (max-width: 600px){
   width:100%;
-  padding:0.5rem;
+  padding:0rem;
   background-color:#212121;
   }
   padding:1rem;
@@ -129,7 +129,9 @@ display:flex;
 justify-content:center;
 margin-top:6rem;
 `
-
+const HumbCont = styled.div`
+padding:0.5rem;
+`
 
 const Nav = ({
   bkimg1="",
@@ -214,7 +216,9 @@ const Nav = ({
        </LinkBox>
        </Web>
         <Mob>
+        <HumbCont>
         <Hamburger toggled={isOpen} toggle={setOpen} color="#E5E5E5" size={25} />
+        </HumbCont>
         <MenuCont height={height} width={width} display={display}>
         <Link href="/" scroll={false}><MobLogo src="./logo.svg"/></Link>
         <MobLinkBox>
