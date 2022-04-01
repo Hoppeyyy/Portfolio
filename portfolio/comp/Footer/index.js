@@ -35,7 +35,7 @@ const Footer = ({
     const Insta_hover = "/Insta_hover.svg"
     const Behance = "/Behance.svg"
     const Behance_hover = "/Behance_hover.svg"
-    const Github = "/Github.svg"
+    const Github = "/github.png"
     const Github_hover = "/github_hover.png"
 
     const ImageToggleOnMouseOver = ({primaryImg, secondaryImg}) => {
